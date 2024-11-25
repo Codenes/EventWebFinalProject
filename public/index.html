@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT TICKET</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <h1>EVENT TICKET</h1>
+            <div class="auth-buttons" id="authButtons">
+                <button id="loginButton" onclick="openLoginForm()">เข้าสู่ระบบ</button>
+                <button id="registerButton" onclick="openRegisterForm()">ลงทะเบียน</button>
+            </div>
+            <div id="userProfile" style="display: none;">
+                <span id="welcomeMessage"></span>
+                <button onclick="logout()">ออกจากระบบ</button>
+            </div>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu" id="hamburgerMenu" style="display: none;">
+                <button onclick="toggleMenu()">☰</button>
+                <div id="menu" class="menu" style="display: none;">
+                    <ul>
+                        <li><a href="#">หน้าหลัก</a></li>
+                        <li><a href="BookDetails.html">ข้อมูลการจอง</a></li>
+                        <li><a href="#" onclick="logout()">ออกจากระบบ</a></li>
+                        <!-- เพิ่มเมนูสำหรับการสร้างอีเว้นท์ -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <h2>แนะนำ Event ที่จะจัด</h2>
+    <section class="event-showcase">
+        <div class="events">
+            <div class="event" onclick="goToEventDetails('event1')">
+                <img src="images/event1.jpg" alt="Event 1">
+                <h3>MusicConcert</h3>
+            </div>
+            <div class="event" onclick="goToEventDetails('event2')">
+                <img src="images/event2.jpg" alt="Event 2">
+                <h3>UrbanMusic</h3>
+            </div>
+            <div class="event" onclick="goToEventDetails('event3')">
+                <img src="images/event3.jpg" alt="Event 3">
+                <h3>spaceconcert</h3>
+            </div>
+            <div class="event" onclick="goToEventDetails('event4')">
+                <img src="images/event4.jpg" alt="Event 4">
+                <h3>Boyconcert</h3>
+            </div>
+            <div class="event" onclick="goToEventDetails('event5')">
+                <img src="images/event5.jpg" alt="Event 5">
+                <h3>musicBar</h3>
+            </div>
+            <div class="event" onclick="goToEventDetails('event6')">
+                <img src="images/event6.jpg" alt="Event 6">
+                <h3>Fujii Kaze</h3>
+            </div><div class="event" onclick="goToEventDetails('event7')">
+                <img src="images/event7.jpg" alt="Event 7">
+                <h3>Onmusic</h3>
+            </div>
+            <div class="event" onclick="goToEventDetails('event8')">
+                <img src="images/event8.jpg" alt="Event 8">
+                <h3>Logomusic</h3>
+            </div>
+            <div class="event" onclick="goToEventDetails('event9')">
+                <img src="images/event9.jpg" alt="Event 9">
+                <h3>Fesmusic</h3>
+            </div>
+            <div class="event" onclick="goToEventDetails('event10')">
+                <img src="images/event10.jpg" alt="Event 10">
+                <h3>Tynkconcert</h3>
+            </div>
+        </div>
+    </section>
+    <!-- Login Form -->
+    <div id="loginOverlay" class="overlay">
+        <div class="overlay-content">
+            <h3>เข้าสู่ระบบ</h3>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="ชื่อผู้ใช้" required>
+                <input type="password" id="loginPassword" placeholder="รหัสผ่าน" required>
+                <button type="submit">เข้าสู่ระบบ</button>
+            </form>
+            <button onclick="closeLoginForm()">ปิด</button>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerOverlay" class="overlay">
+        <div class="overlay-content">
+            <h3>ลงทะเบียน</h3>
+            <form id="registerForm">
+                <input type="text" id="username" placeholder="ชื่อผู้ใช้" required>
+                <input type="email" id="email" placeholder="อีเมล" required>
+                <input type="password" id="password" placeholder="รหัสผ่าน" required>
+                <input type="password" id="confirmPassword" placeholder="ยืนยันรหัสผ่าน" required>
+                <button type="submit">ยืนยันการลงทะเบียน</button>
+            </form>
+            <button onclick="closeRegisterForm()">ปิด</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <h2>แนะนำ Event ที่จะจัด</h2>
+    <section class="event-showcase">
+        <div class="events">
+            <div class="event">
+                <img src="images/event1.jpg" alt="event 1">
+            </div>
+            <div class="event">
+                <img src="images/event2.jpg" alt="event 2">
+            </div>
+            <div class="event">
+                <img src="images/event3.jpg" alt="Event 3">
+            </div>
+            <div class="event">
+                <img src="images/event4.jpg" alt="Event 4">
+            </div>
+            <div class="event">
+                <img src="images/event5.jpg" alt="Event 5">
+            </div>
+            <div class="event">
+                <img src="images/event6.jpg" alt="Event 6">
+            </div>
+            <div class="event">
+                <img src="images/event7.jpg" alt="Event 7">
+            </div>
+            <div class="event">
+                <img src="images/event8.jpg" alt="Event 8">
+            </div>
+            <div class="event">
+                <img src="images/event9.jpg" alt="Event 9">
+            </div>
+            <div class="event">
+                <img src="images/event10.jpg" alt="Event 10">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>ข้อมูลติดต่อ: info@eventticket.com</p>
+    </footer>
+</body>
+</html>

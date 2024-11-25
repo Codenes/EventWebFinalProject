@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดการจอง</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <h1>EVENT TICKET</h1>
+            <div class="auth-buttons" id="authButtons">
+                <button id="loginButton" onclick="openLoginForm()">เข้าสู่ระบบ</button>
+                <button id="registerButton" onclick="openRegisterForm()">ลงทะเบียน</button>
+            </div>
+            <div id="userProfile" style="display: none;">
+                <span id="welcomeMessage"></span>
+                <button onclick="logout()">ออกจากระบบ</button>
+            </div>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu" id="hamburgerMenu" style="display: none;">
+                <button onclick="toggleMenu()">☰</button>
+                <div id="menu" class="menu" style="display: none;">
+                    <ul>
+                        <li><a href="index.html">หน้าหลัก</a></li>
+                        <li><a href="BookDetails.html">ข้อมูลการจอง</a></li>
+                        <li><a href="#" onclick="logout()">ออกจากระบบ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <h2 id="eventName">ข้อมูลการจอง</h2>
+    <ul id="bookingList"></ul> <!-- แสดงรายการการจอง -->
+    
+    <script src="script.js"></script> <!-- เชื่อมโยงไฟล์ script.js -->
+</body>
+</html>

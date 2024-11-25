@@ -1,0 +1,400 @@
+/* การตั้งค่าทั่วไป */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1E1E1E;
+    color: #fff;
+}
+
+/* ส่วนหัวของเว็บไซต์ */
+header {
+    background-color: #121212;
+    color: #fff;
+    padding: 15px 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* บาร์บนสุดที่ประกอบด้วย logo และปุ่มต่างๆ */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* การจัดตำแหน่งเมนู hamburger */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+/* เมื่อ hover ที่ปุ่ม hamburger */
+.hamburger-menu button {
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* เมื่อ hover ที่ปุ่ม hamburger */
+.hamburger-menu button:hover {
+    background-color: #e6c01b; /* สีทองเมื่อ hover */
+    transform: scale(1.1); /* ขยายขนาดของปุ่ม */
+}
+
+/* เมนูภายใน hamburger */
+.menu {
+    display: none;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* เมื่อเมนูเปิด */
+.menu.show {
+    display: block;
+}
+
+/* การจัดการลิสต์เมนู */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* การตั้งค่าสำหรับรายการเมนู */
+.menu li {
+    margin: 18px 0;
+    text-align: center;
+}
+
+/* การตั้งค่าสำหรับลิงค์ในเมนู */
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px; /* ขยายขนาดฟอนต์ */
+    font-weight: bold; /* ทำให้ตัวหนังสือเป็นตัวหนา */
+    letter-spacing: 1px;
+    padding: 10px 0;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* เปลี่ยนสีของลิงค์เมื่อ hover */
+.menu a:hover {
+    color: #e6c01b; /* สีทองเมื่อ hover */
+    transform: translateX(10px); /* เลื่อนลิงค์ไปทางขวาเล็กน้อย */
+}
+
+/* เพิ่มเงาให้ลิงค์เมื่อ hover */
+.menu a:active {
+    color: #b29d1d; /* สีทองเข้มขึ้นเมื่อคลิก */
+}
+
+/* ส่วนของฟอร์ม Login/ Register */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* เนื้อหาของฟอร์มใน overlay */
+.overlay-content {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10% auto;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* สไตล์ฟอร์มใน Login และ Register */
+form input {
+    width: 90%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* เปลี่ยนสี border เมื่อ input ถูกโฟกัส */
+form input:focus {
+    border-color: #e6c01b;
+}
+
+/* ปุ่มในฟอร์ม */
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #D9D9D9;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* เปลี่ยนสีเมื่อ hover ที่ปุ่มในฟอร์ม */
+form button:hover {
+    background-color: #e6c01b;
+}
+
+/* ส่วน footer */
+footer {
+    margin-top: auto;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 14px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* สไตล์ส่วนแสดงข้อมูลผู้ใช้ */
+.user-profile {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.user-profile span {
+    color: white;
+    margin-right: 15px;
+}
+
+.user-profile button {
+    padding: 8px 15px;
+    background-color: #D9D9D9;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.user-profile button:hover {
+    background-color: #e6c01b;
+}
+
+/* ส่วนแสดง Event Showcase */
+.event-showcase .events {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.event {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.event h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.event button {
+    background-color: #e6c01b;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.event button:hover {
+    background-color: #b29d1d;
+}
+
+/* ส่วนแสดง Event Showcase ที่สามารถเลื่อนซ้ายขวาได้ */
+.event-showcase {
+    width: 100%;
+    overflow-x: auto; /* เปิดให้เลื่อน horizontal */
+    white-space: nowrap; /* ป้องกันไม่ให้แต่ละ event ย้ายไปแถวใหม่ */
+    padding: 20px 0;
+}   
+
+h2 {
+    text-align: center;
+}
+
+.event-showcase .events {
+    display: inline-flex; /* ใช้ inline-flex เพื่อให้ item อยู่ในบรรทัดเดียว */
+    gap: 20px;
+}
+
+.event {
+    display: inline-block; /* ให้แต่ละ event อยู่ในแถวเดียวกัน */
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    width: 300px; /* เพิ่มขนาดให้กว้างขึ้น */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.event img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.event h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.event button {
+    background-color: #e6c01b;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.event button:hover {
+    background-color: #b29d1d;
+}
+/* การจัดโครงสร้างของ event-details */
+.event-details {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.event-container {
+    display: flex;
+    flex-direction: row; /* เรียงภาพและข้อความในแนวนอน */
+    gap: 30px; /* เพิ่มช่องว่างระหว่างรูปและรายละเอียด */
+    background-color: #fff;
+    padding: 40px; /* เพิ่ม padding ให้ใหญ่ขึ้น */
+    border-radius: 15px; /* ทำให้มุมโค้งมนขึ้น */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* เพิ่มเงาให้เด่นชัด */
+    max-width: 1000px; /* เพิ่มความกว้างของกรอบ */
+    width: 90%; /* รองรับหน้าจอขนาดเล็ก */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลางหน้าจอ */
+}
+
+/* การจัดการรูปภาพ */
+.event-image img {
+    width: 400px; /* ขยายขนาดรูปภาพ */
+    height: auto;
+    border-radius: 15px;
+}
+
+/* การจัดการข้อมูล */
+.event-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px; /* เพิ่มช่องว่างระหว่างแต่ละบรรทัด */
+    width: 100%;
+}
+
+.event-info h2 {
+    font-size: 32px; /* เพิ่มขนาดฟอนต์ของชื่ออีเวนต์ */
+    margin: 0;
+    color: #333;
+}
+
+.event-info p {
+    font-size: 20px; /* เพิ่มขนาดฟอนต์ของรายละเอียด */
+    margin: 5px 0;
+    color: #555;
+    line-height: 1.5; /* เพิ่มความสูงระหว่างบรรทัด */
+}
+
+/* ปุ่มจอง */
+.event-info button {
+    padding: 15px 30px; /* เพิ่มขนาดปุ่ม */
+    background-color: #e6c01b;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px; /* เพิ่มมุมโค้งมน */
+    font-size: 18px; /* เพิ่มขนาดตัวอักษรในปุ่ม */
+    cursor: pointer;
+    align-self: flex-start; /* ปุ่มชิดด้านซ้าย */
+    transition: background-color 0.3s ease;
+}
+
+.event-info button:hover {
+    background-color: #b29d1d;
+}
+
+#bookingList {
+    padding: 0;  
+}
+
+#bookingList ul{
+    display: flex;
+    justify-content: center;
+    padding: 0;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
